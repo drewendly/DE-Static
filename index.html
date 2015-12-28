@@ -15,194 +15,10 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
+
 <script src="js/jquery.cycle2.js"></script>
-<script src="js/jquery.textfill.min.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-
-<script>
-// external js: isotope.pkgd.js
-
-$(document).ready( function() {
-  
-  $('.grid').isotope({
-    itemSelector: '.grid-item',
-    masonry: {
-      columnWidth: 200
-    }
-  });
-
-});
-</script>
-
-<script>
-function unloadScrollBars() {
-    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
-    document.body.scroll = "no"; // ie only
-    ScrollBars() {
-    document.documentElement.style.overflow = 'auto';  // firefox, chrome
-    document.body.scroll = "yes"; // ie only
-}
-
-});
-});
-</script>
-<script>
-$(function() {
-    $('.text-fill').textfill({
-        maxFontPixels: 90,
-        
-    });
-});
-</script>
-
-<!--
-<script>
-	                                       //  PARTICLE System - GSAP  //
-	$(document).ready(function(){
-
-  var total = 40 ;
- var w = $(".particleContainer").width();
- var h = $(".particleContainer").height();
- for (i=0; i<total; i++){ 
- $(".particleContainer").append('<div class="dot"></div>')
- TweenMax.set($(".dot")[i],{x:Random(w),y:Random(h)+75,opacity:0.25,scale:0.75,force3D:"auto",});
- animm($(".dot")[i]);
- } 
- function animm(elm){ 
- TweenMax.killTweensOf(elm);
- TweenMax.to(elm,(Random(30)*3)+10,
- {bezier:{values:[{x:Random(w*1), y:Random(h*.25)},{x:Random(w*1), y:Random(h*.75)}]},
-  opacity:Random(1)-0.1,
-  scale:((Random(2))*1+0.05),
-  rotation:Random(2160)+1080, 
-  ease: SlowMo.ease.config(0.1, 1.0, false),
- onComplete:function(){TweenMax.delayedCall(Random(2),animm,[elm])}
- });
- };
- 
- function Random (max) { return Math.random()*max; }
-
-});
-</script> -->
-
-<script> //Portfolio BackgroundColor swap (Tween)
-$(document).ready(function(){
-	
-var IL_radio = $("#il-folio"),
-	GD_radio = $("#gd-folio"),
-    Port_bg = $("#Portfolio"),
-    IL_menu = $("#IL_menu"),
-    speed = 0.867;
-	
-	IL_radio.click(
-		function() {
-			    TweenMax.to(Port_bg, speed, {backgroundColor: "#343844", height: "2800px", ease: Expo.easeInOut});
-			                                  // #373c48  2a2d38  2f323d  #292d39
-			        IL_menu.toggleClass('active');
-			});
-			
-	GD_radio.click(
-		function() {
-			    TweenMax.to(Port_bg, speed, {backgroundColor: "#f8f6f5", height: "1850px", ease: Expo.easeInOut});
-			    IL_menu.toggleClass('active', false);
-			});	
-			
-});
-</script>
-
-<!-- <script>
-$(document).ready(function(){
-
-   	////Portfolio BackgroundColor swap (TimelineLite)
-var IL_radio = $("#il-folio"),
-    Port_bg = $("#Portfolio"),
-   
-    xspeed = 3.0;
-
-//instantiate  timeline
-var IL_bg_tl = new TimelineLite({paused:true}); //pause default
-
-IL_bg_tl.to(Port_bg, xspeed, {css: {backgroundColor: "#2d2f3a"}, overwrite:"true", ease: Power3.easeInOut}, "label--1") 
-
-	
-// play timeline on click, reverse animation if active
-IL_radio.click(function() {
-    $(this).toggleClass('active');
-
-    if ( $(this).hasClass('active') ) {
-        IL_bg_tl.play(); 
-    }  
- //   else {
- //       IL_bg_tl.reverse(); 
-  //  }
-});
-});
-</script> 	-->
 
 
-<!-- HOME BANNER ANIMATION
-	
-<script>
-$(document).ready(function(){
-
-   	//PORT NAV - HOME BANNER Preview Animation
-var banner = $(".GD-Home-Banner"),
-   	gallerylink = $(".GD-hov");    
-
-gallerylink.hover (function() 
- {
-    banner.toggleClass('active');
-    
-});
-
-});
-</script> 
-<script>
-$(document).ready(function(){
-
-   	//PORT NAV - HOME BANNER Preview Animation
-var banner = $(".IL-Home-Banner"),
-   	gallerylink = $(".IL-hov");    
-
-gallerylink.hover (function() 
- {
-    banner.toggleClass('active');
-    
-});
-
-});
-</script> 
-<script>
-$(document).ready(function(){
-
-   	//PORT NAV - HOME BANNER Preview Animation
-var banner = $(".MGFX-Home-Banner"),
-   	gallerylink = $(".MGFX-hov");    
-
-gallerylink.hover (function() 
- {
-    banner.toggleClass('active');
-    
-});
-
-});
-</script> 
-<script>
-$(document).ready(function(){
-
-   	//PORT NAV - HOME BANNER Preview Animation
-var banner = $(".MP-Home-Banner"),
-   	gallerylink = $(".MP-hov");    
-
-gallerylink.hover (function() 
- {
-    banner.toggleClass('active');
-    
-});
-
-});
-</script> -->
 
 <script type="text/javascript">
 	
@@ -243,23 +59,6 @@ $("#MGFX").click(function (e) {
 });
 </script>
 
-<script>
-	$(document).ready(function(){
-  $('#IL-banner').zoom({url: 'img/Illustration-Banner-Gold-1296x4000.jpg',duration:240, magnify:.40, });
-});
-</script>
-
-<script language="JavaScript" type="text/javascript"> //Gallery Zoom GSAP
-$(document).ready(function(){
-	$('.tileImage').hover(
-
-	function() {
-	    TweenMax.to(this, 2, {css: {scaleX: 1.25, scaleY: 1.25},ease: Power1.easeInOut});
-	}, function() {
-	    TweenMax.to(this, 3, {css: {scaleX: 1, scaleY: 1},ease: Power1.easeInOut});
-	});
-});
-</script>
 
 <script type="text/javascript">
 	
@@ -399,32 +198,7 @@ $("#homebody").mousemove(function(e){
  
 
 </script>
-<!-- 
-<script type="text/javascript" > 
-	
-	//CORNERS ROTATE + GSAP 
-	
-	    $(document).ready(function() {var boxes = $(".box");
 
-        $("#homebody").mousemove(function(e){
-            $.each(boxes, function(index, el) {
-                var box = $(el);
-
-                var boxCenter = [box.offset().left+box.width()/2, box.offset().top+box.height()/2];
-
-                var angle = Math.atan2(e.pageX- boxCenter[0],- (e.pageY- boxCenter[1]) )*(180/Math.PI);	    
-
-                
-                TweenLite.to(box, 1.667, {shortRotation: angle, transformOrigin:"50% 50%", overwrite:"true", ease:"Back.easeOut" });
-            });
-        });
-
-        boxes.hover(function() {
-            $(this).toggleClass('active');
-        });
-    });	
-
-</script> -->
 
 <script>
 	//FACEBOOK Share Pop-Up
